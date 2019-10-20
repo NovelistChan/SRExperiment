@@ -1,0 +1,245 @@
+Eclipse means a lot of different things to different people. To some  Eclipse is a free, state-of-the-art Java development environment.  To others, Eclipse is a flexible environment to experiment with new computer languages or  extensions to existing languages. To yet others, Eclipse is a comprehensive framework that deploys many advanced  and modern software design and implementation techniques. 
+Those who download the generic Eclipse Platform&#151;usually by mistake&#151;are
+somewhat confounded by what they see.  The platform was conceived
+as the generic foundation for an IDE.  That is, the platform is an IDE without any
+particular programming language in mind. You can create generic projects,
+edit files in a generic text editor, and share the projects and files with
+a Concurrent Versions System (CVS) server. The platform is 
+essentially a glorified version of a file-system browser.
+Eclipse started out as proprietary technology, led by IBM&#146;s subsidiary, Object  Technology International (OTI). IBM wanted to reduce the large number of incompatible development  environments being offered to its customers and to increase the reuse of the common components in those environments. By using the same common framework, development teams could leverage one another&#146;s components, integrate to a high degree, and allow developers to roam among projects. 
+The Eclipse Foundation oversees a lot of activity, with contributors numbering in  the hundreds. To organize these activities, Eclipse is divided into projects  and subprojects. The four main Eclipse projects in June 2004 were:
+Each member of the Eclipse Foundation  has committed to delivering one or more products based on Eclipse. For  example, IBM has moved almost all of its IDE products to the Eclipse  Platform. At EclipseCon 2004, many companies showed exciting  demos of upcoming products based on Eclipse, including several  products based on the new Eclipse RCP.
+Thousands of projects of various sizes are based on Eclipse.   A small number are directly supported by the Eclipse Foundation as official Eclipse projects but a far greater number can be found elsewhere on the Web. Many are hosted at such sites as Source Forge or can be found in the various Eclipse  plug-in listings floating around the Web.  The following are the best-known portals for finding Eclipse-based plug-ins:
+A growing number of universities worldwide are deploying Eclipse as a vehicle for computer science classes. The platform itself can be used very well as an example of state-of-the-art software. Analysis of the Design Patterns  adopted in Eclipse could alone easily fill a curriculum for a year. In addition, Eclipse can be used by students to write their own plug-ins. With minimal effort, interesting topics can be explored and impressive results obtained.
+This is a monetary grant by IBM to perform innovative research based on the Eclipse Platform. The grant varies from $10,000 to $30,000 based on the scale of the project. For a  comprehensive and up-to-date list of award recipients, see  the innovation grant Web site.
+As with most technologies, Eclipse  started out with a single newsgroup. Now, all major, and some smaller, Eclipse projects have their own newsgroups. Some are more active than others. Some have a very specific scope, and others are more broad in their coverage of discussion topics.  The Eclipse newsgroup page has a complete index of the current Eclipse newsgroups and a description of their focus areas.
+The online archive of Eclipse articles contains more than 50 articles written by the Eclipse experts, often the committers of the Eclipse projects described in the articles. When printed in sequence, the online articles contain more than 500 pages of deep knowledge of the Eclipse Platform.
+In June 2004, books on Eclipse, other than this one, included the following:
+Don&#146;t be put off by little or no initial response to a feature request logged in Bugzilla.  Sometimes, the committers are focusing on feature deadlines or other priorities, but rest assured that everything logged to Bugzilla is at least read by one or more committers within a week.  If your request gets no response, you can do some things to help speed up the process.
+At least three simple ways exist to find documentation for extension points:
+When you unzip Eclipse, the directory layout looks something like this: 
+Whenever it encounters a problem that does not warrant launching a dialog, Eclipse saves a report in the workspace log file.  The log file can be looked at in four alternative ways.
+Each release of Eclipse is tested on a set of officially supported platforms:
+Invariably, with several hundred thousand downloads of Eclipse every month, Eclipse does not start at all for a few users . These failures typically stem from software configuration problems on the host machine or an unusual hardware configuration.  If you are already a power Eclipse user, you might be tempted to skip this question. However, even the most advanced Eclipse user will occasionally have problems starting an Eclipse build. So, with a nod to David Letterman, here is a &#147;top ten&#148; list of the most common start-up problems, along with suggestions for solutions.
+To upgrade Eclipse IDE to the next major release
+Let's say that you are new to Eclipse, but  have some existing projects with file system layouts that cannot be changed.  Perhaps you have other tools or build processes that require your projects to be laid out in a certain way.  Because Eclipse also has expectations about how projects are laid out on disk, you can run into problems when you try to get started in Eclipse with your existing projects.
+
+No. Many rumors and discussions circulated during the development of Eclipse 3.0 about how compatible it would be with plug-ins written from Eclipse 2.1 or earlier.  Clearly, in the large community of Eclipse plug-in writers, many would be greatly inconvenienced by any breaking changes to existing API.  On the other hand, rigidly maintaining API across all releases can be a great barrier to ongoing innovation in the platform.  Eventually, a balance was struck that allowed for some well-justified breaking changes, while also providing a compatibility story to allow old plug-ins to continue running on Eclipse 3.0. What does this mean if you have written plug-ins targeting older versions of the platform?
+Eclipse makes a careful distinction between published APIs and internal implementation details. The APIs are designed to reduce coupling between plug-ins to a small, stable interface.  This insulates clients of the interface from being affected by implementation changes, and it allows the plug-in that publishes the interface to continue to innovate and grow without breaking existing clients. If your plug-in uses only published API and carefully follows the API contracts defined in the API javadoc, your plug-in should continue to work after migrating to a new Eclipse release.
+The Navigator provides a view of the workspace and shows resources available
+on the file system. From the Navigator, files can be opened in an editor.
+When multiple editors are opened, it can be difficult to keep track of
+where the related resources are in the Navigator. For this reason, the
+Navigator has support to synchronize its tree view with the currently
+edited resource.
+The keyboard can be used in several ways to traverse between editors.
+The table below lists some frequently used but perhaps lesser-known keyboard shortcuts in the context of Java editing.
+Opening a given type in an editor can be done in many ways.
+When extending Eclipse, plug-in authors are confronted with an overwhelming selection
+of API to choose from. In the good old days, books could be published with
+API references, and programmers could study the material and recite the proper
+incantations to drive the relatively simple APIs. With modern APIs, this is
+no longer possible. There simply is too much to read and remember. 
+Content Assist to the rescue!
+The Eclipse editor framework has excellent support for templates, and we don't mean the C++ kind. 
+Whenever it detects an error, the Java editor highlights the error using a wavy red line under the offending code and a marker in the left editor margin. Moving the mouse over the underlined code or the marker will indicate the error. The marker can be selected with the left mouse to activate the Quick Fix pop-up, indicating actions that can be undertaken to repair the error. Alternatively, pressing Ctrl+1 will activate Quick Fix  from the keyboard.
+Eclipse has built-in support for launching applications and
+for debugging Java applications but no inherent support for profiling.
+However, support for profilers can
+be implemented by using a special launch configuration. Commercial 
+products, such as WebSphere Studio Application
+Developer, do this by adding profiling support to their set of plug-ins. 
+Much of this work is being standardized and moved down into the open source
+Eclipse subproject called Hyades.
+If you know how to run your Java program, you can debug it.
+Assuming that you just ran your Java program, press F11, and the most
+recently executed launch configuration will be launched under control 
+of the Eclipse Java debugger. Breakpoints can be set in any Java editor
+by double-clicking in the left margin of the editor or by using the context
+menu in the left margin to toggle the breakpoint on this line.
+Hot code replace (HCR) is a debugging technique whereby the Eclipse Java debugger transmits new class files over the debugging channel to another JVM. In the case of Eclipse development, this also applies to the VM that runs the runtime workbench. The idea is that you can start a debugging session on a given runtime workbench and change a Java file in your development workbench, and the debugger will replace the code in the receiving VM while it is running. No restart is required, hence the reference to "hot".
+You may discover that serializable classes compiled with Eclipse are not compatible
+with the same classes compiled using javac.  When classes compiled in Eclipse are
+written to an object stream, you may not be able to read them back in a program 
+that was compiled elsewhere.  Many people blame this on the Eclipse compiler, 
+assuming that it is somehow not conforming properly to spec.  In fact, this can be
+a problem between any two compilers or even two versions of a compiler provided
+by the same vendor.  
+The simplest way to develop and maintain a plug-in is to use the special
+wizards and editors the PDE provides.
+Using a wizard, you can generate basic plug-ins with a few mouse clicks.
+After some practice, you can create an extension to Eclipse, and even launch it in 
+a runtime workbench, in under a minute. A lot of XML and Java code is 
+automatically generated for you.
+
+Declaring an extension point is arguably one of the more difficult and less documented and supported tasks in Eclipse. Most plug-in writers simply copy an extension point schema from  others to get an approximation of what they need.
+An update site may contain your own plugins, as well as public plugins mirrored.
+Like members of a community, plug-ins do not generally live in isolation.
+Most plug-ins make use of services provided by other plug-ins, and many,
+in turn, offer services that other plug-ins can consume.  Some groups of
+plug-ins are tightly related, such as the group of plug-ins providing Java
+development tools&#151;the JDT plug-ins&#151;and other plug-ins,
+such as SWT, stand alone without any awareness of the plug-ins 
+around them.  Plug-ins can also expose a means for other plug-ins to
+customize the functionality they offer, just as a handheld drill has
+an opening that allows you to insert other attachments such as
+screwdrivers and sanders.  When designing a plug-in, you need to
+think about what specific plug-ins or services it will need, what 
+it will expose to others, and in what ways it wants to allow itself
+to be customized by others.
+Plug-ins store data in two standard locations.  First, each plug-in has its own install directory that can contain any number of files and folders.  The install directory must be treated as read-only, as a multi-user installation of Eclipse will typically use a single install location to serve many users.  However, your plug-in can still store read-only information there, such as images, templates,  default settings, and documentation.
+
+Sometimes it is useful to make part of a plug-in optional, 
+allowing it to be installed, uninstalled, or updated independently from 
+the rest of the plug-in.  For example,
+a plug-in may have a library that is specific to a particular operating system or
+windowing system or a language pack that adds translations for the plug-in's
+messages. In these situations, you can create a fragment that is associated
+with a particular host plug-in.  On disk, a fragment looks 
+almost exactly the same as a plug-in, except for a few 
+cosmetic differences.
+A common misconception is that a fragment can be used to patch
+or replace functionality in its host plug-in. Although this is possible to
+a certain extent, this is not what fragments were designed for. A
+plug-in and its fragments each contribute a manifest, and each may
+also contribute native libraries, Java code libraries, and other resources.
+At runtime, these contributions are all merged into a single manifest and 
+a single namespace of libraries and resources.
+If a fragment defines the same library as its host, whether the 
+fragment's library will be found over the host's library
+is undefined. This makes it impractical to use fragments as a way of replacing
+libraries or other resources defined by a plug-in.
+Just when you thought you were beginning to understand how the
+Eclipse kernel worked, those pesky Eclipse developers 
+replaced it all for Eclipse 3.0.  The kernel is now built on
+another Java component framework, the Open Services Gateway 
+initiative (OSGi). The reasons for this convergence between Eclipse
+and OSGi are manifold. The two frameworks had many similarities
+to begin with, and each framework had many features
+that the other lacked. 
+Prior to Eclipse 3.0 the platform had to be restarted in order for  added, removed, or changed plug-ins to be recognized. This was largely owing to the fact that the plug-in registry was computed statically at start-up, and no infrastructure was available for changing the registry on the fly.  In Eclipse 3.0, plug-ins can be added or removed dynamically, without restarting. Dynamicity, however, does not come for free.  Roughly speaking, plug-ins fall into four  categories of dynamicity.
+Dynamic awareness requires extra steps
+that were not required prior to the introduction of dynamic plug-ins.
+Dynamic awareness requires that you remove all references to
+classes defined in other plug-ins when those plug-ins are removed
+from the system. In particular, if your plug-in defines extension points 
+that load classes from other plug-ins&#151;executable extensions&#151;you 
+need to discard those references when other plug-ins are dynamically
+removed. The extension registry allows you
+to add a listener that notifies you when extensions are being
+added or removed from the system. If your plug-in maintains
+its own cache of extensions that are installed on your extension
+point, your listener should update this cache for each added or
+removed extension. 
+The platform job mechanism uses a pool of threads, allowing it to run several jobs at the same time. If you have many jobs that  you want to run in the background, you may want to prevent more than one from running at once.  For example, if the jobs are accessing an exclusive resource, such as a file or a socket, you won&#146;t want them to run simultaneously.  This is accomplished by using job-scheduling rules. A scheduling rule contains logic for determining whether it conflicts with another  rule.  If two rules conflict, two jobs using those rules will not be run at the same time.  The following scheduling rule will act as a mutex, not allowing two jobs with the same rule instance to run concurrently:
+It is quite simple to find out when jobs, including those owned by others, are scheduled, run, awoken, and finished. As with many other facilities in the Eclipse Platform, a simple listener suffices:
+
+Standard Widget Toolkit (SWT) is the UI toolkit used by 
+the Eclipse Platform and most other Eclipse projects.  Its stated goal,
+according to the SWT home page, is to provide &#147;efficient, portable
+access to the user-interface features of the operating systems on which
+it is implemented.&#148;  Its goal is not to provide a rich user-interface
+design framework but rather the thinnest possible user-interface API
+that can be implemented uniformly on the largest possible set of platforms
+while still providing sufficient functionality to build rich  
+graphical user interface (GUI) applications.
+This can be interpreted as either a legal question or a technical question. 
+You can find an official answer to the legal question on the 
+SWT FAQ hosted on the SWT development team home page at eclipse.org.
+The answer to the technical question is an unqualified 
+yes! However, because SWT has a native component, the
+technical details are a bit more involved than they are for simple Java libraries.
+The easiest way to configure a Java project in Eclipse to use SWT is as follows:
+Creating an executable JAR file for a stand-alone SWT program is very similar to creating any executable JAR file, with one important difference. Starting with Eclipse version 3.3, the file "swt.jar" file includes platform-specific executable files that are unpacked automatically when your SWT program is executed. This means that a given runtime folder will normally be platform specific. 
+On most operating systems, drawing to the screen is an operation that needs to be synchronized with other draw requests to prevent chaos. A simple OS solution for this resource-contention  problem is to allow drawing operations to occur only in a special thread. Rather than drawing at will, an application sends in a request to the OS for a redraw, and the OS will, at a time it deems appropriate, call back the application. An SWT 
+application behaves in the same way. 
+In Eclipse 3.0, SWT introduced a browser widget for displaying a native HTML renderer
+inside an SWT control. Prior to the introduction of this browser, it was necessary
+to invoke an external Web browser program for displaying rendered HTML. The
+browser can be instructed to render either a URL or a supplied string containing
+HTML content.  The browser widget does not include the usual controls for navigation,
+bookmarks, and all the usual bells and whistles associated with a Web browser. As such,
+it can be used for highly controlled applications, such as displaying help text or even
+for showing decorated and interactive text inside a view or an editor.
+Minimally, all content viewers require you to supply a content provider and the label provider to interact with your model. The content provider is the viewer&#146;s gateway to the structure of the model elements that will be displayed in the viewer.  When an input is provided to a viewer, the viewer asks the content provider what elements to show for that input.  For more complex structures, such as trees, the viewer asks the content provider when it needs to know the children or parent of a given model element.  
+With SWT, you are responsible for managing the lifecycle of such operating system resources as fonts, colors, and images. Most of the time, you can simply tie the lifecycle of these resources to the lifecycle of the widget using them.  They can be allocated when a shell is opened, for example, and disposed of when the shell is disposed of.
+Yes, as long as the wizards expose them as API.  Most of the time, plug-ins will make their wizard pages API but will not make the wizard itself API.  The reason is that most of the interesting functionality is in the pages anyway, and other plug-ins wanting to reuse a wizard will generally want to insert some of their own pages as well.
+Denizens of the Eclipse newsgroups, clearly
+expressing frustration with the overwhelming sea of terms, have been known to
+ask, "What is the Eclipsian word for X?" or "What is that thingy
+called in Eclipse Speak?" In an effort to assuage the suffering of new users, 
+the following is a mile-high view of the pieces of the Eclipse UI.
+The status line has two areas for showing progress. The status line manager has a progress monitor that can be used  when you want to block the user from continuing to work during an operation.  This progress bar is used as follows:
+When pressing Ctrl+j in a text editor, the editor enters incremental find mode and prints messages in the status bar in the lower left-hand corner. 
+Suppose that your viewer contains model elements for which other plug-ins
+have defined label decorators.  To make those decorations appear in your
+viewer, you need to install a decorating label provider.  Assuming that you have
+already written your own basic label provider, simply do the following to
+add declarative decorations from other plug-ins:
+
+A Progress view was introduced in Eclipse 3.0 to provide feedback for activities occurring in the background.  This view also allows the user to  cancel background activity and to find out details when errors occur in the background.  The progress animation icon on the right-hand side of the status line is also associated with this view.  The icon is animated  whenever anything is running in the background. There is no API for reporting progress directly to any of these progress indicators.
+
+The workbench page is the main body of a workbench window: between the toolbar and the status line, the area  
+that contains views and editors.  In Eclipse 1.0, each 
+workbench window could have multiple pages, but this has not been the case
+since Eclipse 2.0.  The workbench page can have one or more perspectives
+associated with it that define the layout of the views and editors in the page.
+Each workbench page has at most one instance of each kind of view and one
+editor per unique editor input.  When the perspective is changed, the position
+and visibility of views and editors change, but the set of open views
+and editors does not change.
+Plug-in writers implementing views are often frustrated by their lack of control 
+over when and how their views are presented to the user.  Common questions
+include the following: 
+Each view has a drop-down menu in two locations:
+Eclipse 3.0 lifts the restriction of allowing only a single instance of each
+view type.  You can now open any number of copies of a given
+view.  Each copy needs a secondary ID to disambiguate the
+view reference.  Here is a snippet that opens two copies of the Books view
+from the FAQ Examples plug-in:
+You can&#146;t.  Editors, like most other extensions to the platform, must be
+specified declaratively in the plug-in manifest file.  You cannot dynamically
+install a new editor except by dynamically installing a new plug-in containing
+the new editor.
+Many terms are thrown around in Eclipse for units of functionality or  behavior: runnables, actions, commands, operations, and jobs,  among others.  Here is a high- level view of the terms to help you keep things straight.
+Simply defining an action set does not guarantee that it will appear in  the UI. This characteristic is very important, as an Eclipse product  with thousands of plug-ins would quickly become  overwhelmed with actions if their appearance in the UI was not carefully controlled.  An action set can be made visible in a number of ways:
+Since you have come this far, you probably already understand that Actions and Commands basically do the same thing: They cause a certain piece of code to be executed. They are triggered, mainly, from artifacts within the user interface. These artifacts can be an icon in a (tool)bar, a menu item or a certain key combination. 
+By default, menu managers in JFace are static; that is, contributions are added once when the view is created, and they remain unchanged each time the view is opened.  Individual actions may enable or disable themselves, based on the current context, but the menu itself remains stable.
+Activities serve two purposes:
+There are two kinds of activities
+When you look at the collection of plug-ins in the Eclipse SDK, you're confronted
+with a daunting list.  People wanting to create their own applications using Eclipse
+naturally ask how this list can be pared down so that only the essential plug-ins
+remain.  If you take this exercise to its extreme, you'll be left with a
+tiny Eclipse kernel consisting of the following:
+
+The information in this FAQ entry is @since Eclipse 3.1.
+Most Eclipse-based commercial product offerings ship their own product plug-ins using a professional installation program, such as InstallShield, or using a free one, such as the Install Toolkit for Java (from IBM AlphaWorks). Such installation tools provide the flexibility of user-defined scripts that are run during installation to discover already installed Eclipse installations, to query the registry on Windows, and most important, to provide graceful uninstall capabilities.
+Eclipse provides rich support for creating editors that operate on text, such as programming language editors or document editors.  The framework has been designed in several layers of increasing coupling to the Eclipse Platform. Some of the lower-level components can easily be used outside Eclipse in stand-alone applications, and other parts can be used only within a running Eclipse Platform.  Using this framework, you can quickly create a powerful editor with surprisingly little work.  
+
+(This article seems to describe the now deprecated "classic" search)
+
+
+No.  Resources are strictly a file system-based model.  They cannot be used to represent files on a remote server or in a database. Although this prevents a large amount of the platform&#146;s functionality from being used for nonlocal applications, there were strong architectural reasons
+for taking this approach.  A principal design goal of Eclipse from the start was to enable it to interoperate smoothly with other tools.  Because most tools operate on resources in the file system, this is an important medium for interaction between applications.  If Eclipse were built on an abstract resource model with no necessary connection with the file system, interaction between Eclipse plug-ins and non-Eclipse-aware tools would be very difficult.
+Resource change listeners are notified of most changes that occur in the workspace, including when any file, folder, or project is created, deleted, or modified. Listeners can also be registered for some special events, such as before projects are deleted or closed and before and after workspace autobuilds. Registering a resource change listener is easy:
+Project natures act as tags on a project to indicate that a certain 
+tool is used to operate on that project
+
+Since 3.3 you can use the new EFS support to open an text editor on a file outside the workspace:
+
+Register a workspace resource change listener. Inside our eScript plug-in class, we call
+To register the eScript builder for a given project, add the builder to the project&#146;s
+build specification as follows:
+When running a build in a runtime workbench, you might get the following message:
+Phase 1 of language integration with Eclipse focuses on compilation of source files and building projects. We can distinguish the following individual steps/approaches to obtain complete integration:
+
+JDT offers a number of mechanisms for manipulating
+Java programs.  It can be a daunting task to figure out
+which of these options best suits your needs.  Each mechanism has
+different capabilities and trade-offs, depending on exactly
+what you want to do. Here is a quick rundown of what&#146;s available.
+
+JDT has support for launching Java programs. First, add the following plug-ins to
+your dependent list:
+To add your page to this category, place the following code in your FAQ: 
